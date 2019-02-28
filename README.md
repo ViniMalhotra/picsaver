@@ -1,6 +1,5 @@
 # Picsaver
-Link to my web app:
-http://ec2-13-58-251-156.us-east-2.compute.amazonaws.com/first/
+
 <br>
 
 This is an application used to save Pictures and details of the tourist places you visited. Add the pictures, store them for later and delete them if 
