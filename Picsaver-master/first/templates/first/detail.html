@@ -1,0 +1,16 @@
+{% extends 'first/base.html'%}
+{% block body %}
+    <body>
+        <center>
+            <h1>
+                Place name: &nbsp; {{ album.placeName}}
+            </h1>
+            <img src="{{album.picture.url}}" style="width:400px;height:300px;">
+        </center>
+        <br>
+        <br>
+        <p style="font-size:160%">{{ album.description }}</p>
+    <br>
+        <h3>City : &nbsp;{{album.city}}, State : &nbsp;{{album.state}}, Country:&nbsp; {{album.country}}</h3>
+    </body>
+{% endblock %}

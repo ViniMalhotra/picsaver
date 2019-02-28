@@ -1,0 +1,24 @@
+{% extends 'first/base.html' %}
+{% block body %}
+<center>
+    <a href="{% url 'picSaver:album-add' %}">
+        <button type="submit" style="font-size:160%"> Click here to add pictures</button>
+    </a><br><br>
+</center>
+        {% if object_list %}
+            <ul>
+                {% for album in object_list %}
+                    <li> <a href="{% url 'picSaver:detail' album.id %}" style="font-size:160% "> {{album.placeName}} </a> </li>
+                <form action="{% url 'picSaver:album-delete' album.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="album-id" value="{{album.id}}"/>
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                 </form>
+                {%endfor%}
+            </ul>
+        {% else %}
+            <h3> No photos yet</h3>
+        {% endif %}
+{% endblock %}
